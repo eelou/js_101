@@ -1,0 +1,7 @@
+Falsy values
+  false
+  undefined
+  NaN
+  "" (empty string)
+  null
+  0
