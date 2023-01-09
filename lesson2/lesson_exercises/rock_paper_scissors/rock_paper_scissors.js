@@ -6,14 +6,14 @@ function displayWinner(choice, computerChoice) {
 
   if ((choice === 'rock' && (computerChoice === 'scissors' || computerChoice === 'lizard')) ||
       (choice === 'paper' && (computerChoice === 'rock' || computerChoice === 'spock')) || 
-      (choice === 'scissors' && (computerChoice === 'paper' || computerChoice === 'lizard'))) {
+      (choice === 'scissors' && (computerChoice === 'paper' || computerChoice === 'lizard')) ||
+      (choice === 'lizard' && (computerChoice === 'paper' || computerChoice === 'spock')) ||
+      (choice === 'spock' && (computerChoice === 'rock' || computerChoice === 'scissors'))) {
     prompt('You win!');
-  } else if ((choice === 'rock' && (computerChoice === 'paper' || computerChoice=== 'spock')) ||
-             (choice === 'paper' && (computerChoice === 'scissors' || computerChoice === 'liazard')) ||
-             (choice === 'scissors' && (computerChoice === 'rock' || computerChoice === 'spock'))) {
+  } else if (choice === computerChoice) {
     prompt('Computer wins!');
   } else {
-    prompt("It's a tie!");
+    prompt("Computer wins!");
   }
 }
 
@@ -23,12 +23,15 @@ function prompt (message) {
 
 function validChoice (checkChoice) {
   if (checkChoice === 'r' || checkChoice === 'rock') {
-    return checkChoice = 'rock';
-  }else if (checkChoice === 'p' || checkChoice === 'paper') {
-    return checkChoice = 'paper';
-  }else if (checkChoice === 'l' || checkChoice === 'lizard') {
-    return checkChoice = 'lizard';
-  }else if (checkChoice === 's') {
+    checkChoice = 'rock';
+    return checkChoice;
+  } else if (checkChoice === 'p' || checkChoice === 'paper') {
+    checkChoice = 'paper';
+    return checkChoice;
+  } else if (checkChoice === 'l' || checkChoice === 'lizard') {
+    checkChoice = 'lizard';
+    return checkChoice;
+  } else if (checkChoice === 's') {
     prompt ('Do you mean scissors or spock? (sc or sp)');
     let checkChoice = readline.question();
     
@@ -36,17 +39,21 @@ function validChoice (checkChoice) {
       prompt("That's not a valid choice!!!");
       checkChoice = readline.question();
     }
-      if (checkChoice === 'sc' || checkChoice === 'scissors') {
-        console.log(`1`);
-        return checkChoice = 'scissors';
-      }else if (checkChoice === 'sp' || checkChoice === 'spock') {
-        console.log(`2`);
-        return checkChoice = 'spock';
-      }
-  }else if (checkChoice === 'sc' || checkChoice === 'scissors') {
-    return checkChoice = 'scissors';
-  }else if (checkChoice === 'sp' || checkChoice === 'spock') {
-    return checkChoice = 'spock';
+    if (checkChoice === 'sc' || checkChoice === 'scissors') {
+      console.log(`1`);
+      checkChoice = 'scissors';
+      return checkChoice;
+    } else if (checkChoice === 'sp' || checkChoice === 'spock') {
+      console.log(`2`);
+      checkChoice = 'spock';
+      return checkChoice;
+    }
+  } else if (checkChoice === 'sc' || checkChoice === 'scissors') {
+    checkChoice = 'scissors';
+    return checkChoice;
+  } else if (checkChoice === 'sp' || checkChoice === 'spock') {
+    checkChoice = 'spock';
+    return checkChoice;
   }
 }
 
