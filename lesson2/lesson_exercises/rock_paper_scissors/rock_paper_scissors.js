@@ -33,7 +33,7 @@ function validChoice (checkChoice) {
     return checkChoice;
   } else if (checkChoice === 's') {
     prompt ('Do you mean scissors or spock? (sc or sp)');
-    let checkChoice = readline.question();
+    checkChoice = readline.question();
     
     while (checkChoice !== 'sc' && checkChoice !== 'sp' && checkChoice !== 'scissors' && checkChoice !== 'spock') {
       prompt("That's not a valid choice!!!");
