@@ -79,8 +79,8 @@ while (true) {
   let answer = getUserInput();
   if (answer.toLowerCase() === 'no' || answer.toLowerCase() === 'n') {
     break;
-  } else if (answer.toLowerCase() !== 'yes' || answer.toLowerCase() !== 'y'
-            || answer.toLowerCase() !== 'no' || answer.toLowerCase() !== 'n') {
+  } else if (answer.toLowerCase() !== 'yes' && answer.toLowerCase() !== 'y'
+            && answer.toLowerCase() !== 'no' && answer.toLowerCase() !== 'n') {
     prompt(`Please enter 'yes' or 'no'.`);
     answer = getUserInput();
   }
