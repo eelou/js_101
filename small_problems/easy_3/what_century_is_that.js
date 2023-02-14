@@ -28,4 +28,3 @@ century(10103);       // "102nd"
 century(1052);        // "11th"
 century(1127);        // "12th"
 century(11201);
-
